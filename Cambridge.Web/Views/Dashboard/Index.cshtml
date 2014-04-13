@@ -1,0 +1,30 @@
+﻿@model Cambridge.Web.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Cambridge Exploration - Your Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section ng-controller="DashboardController">
+    <h2>Your Dashboard</h2>
+    
+    @if (Model.PrespectiseUrls.Any())
+    {
+        <ul>
+            @foreach (var files in Model.PrespectiseUrls)
+            {
+                <li><a href="@files.FileName" ng-model="PrespectiseUrl" target="_blank">Download Your Prospectus</a></li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>
+            No Prospectus exists.
+        </p>
+    }
+    
+    <p>
+        <a href="@Url.Action("Logout")">Log Out</a>
+    </p>
+</section>

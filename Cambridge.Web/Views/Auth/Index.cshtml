@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section ng-controller="AuthController">
+    <div>
+        <div class="attention" ng-show="IsError" style="margin-top: 10px;" ng-cloak>{{ErrorMessage}}</div>
+        
+        <div class="wrapper">
+            <p style="margin-left: 17px;">
+                You must first <a href="@Url.Action("Index", "Register")">register</a> prior to receiving your Prospectus.
+            </p>
+
+            <div id="login" ng-show="!IsLoading">
+                <form name="loginform" method="POST" ng-submit="Authenticate()" novalidate>
+                    <fieldset class="login">
+                        <legend>Login</legend>
+                        <div>
+                            <label for="Email">Email:</label>
+                            <input id="Email" name="Email" type="email" ng-model="Auth.Email" tabindex="1" maxlength="50" required autofocus="autofocus" />
+                            <span class="required" ng-show="loginform.Email.$invalid && !loginform.Email.$pristine" ng-cloak>Enter a valid email.</span>
+                        </div>
+                        <div>
+                            <label for="Passcode">Password:</label>
+                            <input id="Passcode" name="Passcode" type="password" ng-model="Auth.Password" maxlength="50" tabindex="2" required />
+                            <span class="required" ng-cloak ng-show="loginform.Passcode.$invalid && !loginform.Passcode.$pristine">Enter your password.</span>
+                        </div>
+                        <div>
+                            <button type="submit" tabindex="3" ng-disabled="loginform.$invalid" ng-class="{ 'disabled' : loginform.Email.$invalid && !loginform.Email.$pristine || loginform.Passcode.$invalid && !loginform.Passcode.$pristine }">Login</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <br />
+
+                <div style="margin-left: 17px;">
+                    <a href="@Url.Action("Index", "Register")">[ Click to Register ]</a>
+                </div>
+            </div>
+            <div ng-show="IsLoading" ng-cloak>
+                <p>Authenticating...</p>
+            </div>
+            <div>
+                <img src="@Url.Content("~/Content/Images/lease-map.jpg")" alt="Area Production Map" />
+            </div>
+        </div>
+        
+        
+    </div>
+</section>
+

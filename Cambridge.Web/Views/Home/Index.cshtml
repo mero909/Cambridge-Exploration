@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section ng-controller="HomeController">
+    <div class="marketing-images">
+        <div>
+            <img src="@Url.Content("~/Content/Images/marketing1.jpg")" alt="Oil &amp; Gas" />
+            <img src="@Url.Content("~/Content/Images/marketing2.jpg")" alt="Oil &amp; Gas" />
+        </div>
+        <div>
+            <img src="@Url.Content("~/Content/Images/marketing3.jpg")" alt="Oil &amp; Gas" />
+            <img src="@Url.Content("~/Content/Images/marketing4.jpg")" alt="Oil &amp; Gas" />
+        </div>
+    </div>
+    <h2 class="high-profile">
+        -- Energy Independence FROM AMERICAN SOIL --
+    </h2>
+    <div class="content-wrap">
+        <div>
+            <p>
+                Cambridge’s goal is to deliver a sustainable rate
+                of return to oil and gas investors by developing, acquiring and exploring for oil and gas resources.
+                Our infield shallow vertical wells give us a similar
+                dollar for dollar return as the horizontal wells do
+                without the expensive refracs that are sometimes required.
+            </p>
+        </div>
+        <div>
+            <p>
+                We believe that honest hard working people are the key to our success.  We take pride in
+                hiring the best contractors available for every
+                phase of our drilling, completion and production operations of our wells.  We are energetic,
+                entrepreneurial and professional in our efforts
+                to better serve our investors.
+            </p>
+        </div>
+        <div>
+            <img src="@Url.Content("~/Content/Images/lease-map-small.jpg")" alt="Oil Lease Map" />
+            <img src="@Url.Content("~/Content/Images/lease-map-zoomed-in.jpg")" alt="Our Lease Map"/>
+        </div>
+    </div>
+
+    <div class="register-content">
+        <div>
+            <h4>Invest with Cambridge Today</h4>
+            <p>
+                Would you like to invest with us?
+            </p>
+            <p>
+                <a href="@Url.Action("Index", "Register")" style="font-weight: bold;">Register</a> for more information and to see if you qualify to invest.
+            </p>
+            <p>
+                Cambridge Exploration offers oil and gas investment opportunities through direct oil and gas participation
+                programs which enable investors to Participate in the potential cash flow and unique tax benefits associated
+                with oil and gas investments.
+            </p>
+            <p class="disclaimer">
+                Disclaimer:  There are significant Risks associated with investing in oil
+                and gas ventures.
+                The above information is for general purposes only and is not a solicitation to buy or an Offer to sell any securities.
+                General information on this site is not intended to be used as individual investment or tax advice.
+                Consult your Personal tax advisor concerning the current tax laws and their applicability and effect on your personal tax situation.
+            </p>
+        </div>
+    </div>
+</section>

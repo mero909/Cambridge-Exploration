@@ -1,0 +1,10 @@
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\Cambridge.Data.dll.config
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\Cambridge.Data.dll
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\Cambridge.Data.pdb
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\EntityFramework.dll
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\EntityFramework.SqlServer.dll
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\EntityFramework.xml
+G:\Projects\Cambridge\Cambridge.Data\bin\Release\EntityFramework.SqlServer.xml
+G:\Projects\Cambridge\Cambridge.Data\obj\Release\Cambridge.Data.csprojResolveAssemblyReference.cache
+G:\Projects\Cambridge\Cambridge.Data\obj\Release\Cambridge.Data.dll
+G:\Projects\Cambridge\Cambridge.Data\obj\Release\Cambridge.Data.pdb

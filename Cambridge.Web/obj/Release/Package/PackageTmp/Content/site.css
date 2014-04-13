@@ -1,0 +1,491 @@
+@import url('http://fonts.googleapis.com/css?family=Oxygen:400,700');
+a {
+  color: #000000;
+  text-decoration: underline;
+}
+body {
+  font-family: 'Oxygen', sans-serif;
+  color: #000000;
+  font-size: 1em;
+  background-color: #9dc3e6;
+}
+h1,
+h2,
+h4,
+h5 {
+  display: block;
+  text-transform: uppercase;
+  clear: both;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 1.3em;
+}
+h5 {
+  font-size: 1em;
+}
+button {
+  cursor: pointer;
+  background-color: #059515;
+  color: #ffffff;
+  border: solid 1px #000000;
+}
+button[disabled] {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
+  color: #5b5b5b;
+  border: solid 1px #000000;
+}
+header {
+  height: 100px;
+}
+header h1 {
+  font-size: 2em;
+  margin: 25px auto 20px;
+  height: 50px;
+  width: 1336px;
+}
+header h1 a {
+  color: #000000;
+}
+header h1 a:hover {
+  text-decoration: none;
+}
+header h5 {
+  margin: -11px 0 20px 22px;
+}
+header h5 a {
+  color: #000000;
+}
+header h5 a:hover {
+  text-decoration: none;
+}
+header nav {
+  background-color: #005db2;
+  height: 35px;
+  padding: 0px 0 5px 10px;
+  border-top: solid 1px #000000;
+  border-bottom: solid 1px #000000;
+}
+header nav div.wrap {
+  width: 1336px;
+  height: 35px;
+  margin: 0 auto 0;
+  position: relative;
+}
+header nav div.wrap div.inner-nav {
+  margin: 5px 10px 0 0;
+  position: absolute;
+  right: 0;
+}
+header nav div.wrap div.inner-nav a {
+  color: #ffffff;
+}
+header nav div.wrap div.inner-nav a:hover {
+  text-decoration: underline;
+}
+header nav div.wrap div.inner-nav span {
+  margin: 0 10px 0 10px;
+  padding: 0;
+  color: #ffffff;
+}
+header nav div.wrap div.inner-nav button {
+  background-color: #ffa819;
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+}
+.ie {
+  position: absolute;
+  top: 0;
+  height: 30px;
+  background-color: #ffa819;
+  color: #000000;
+  text-align: center;
+  width: 100%;
+}
+section {
+  min-height: 700px;
+  margin: 35px auto 0;
+  width: 1336px;
+}
+footer {
+  margin: 40px auto 0px;
+  clear: both;
+  font-size: 0.8em;
+  text-align: center;
+  width: 1336px;
+}
+footer a {
+  color: #000000;
+}
+footer p:nth-child(2) span {
+  margin: 0 5px 0 5px;
+}
+.disclaimer {
+  font-size: .8em;
+}
+.content-wrap {
+  background-color: #005db2;
+  color: #ffffff;
+  display: block;
+  height: 200px;
+  padding: 20px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: solid 1px #000000;
+}
+.content-wrap div {
+  float: left;
+  width: 250px;
+  margin: 0 20px 0 0;
+}
+.content-wrap div p {
+  padding: 0;
+  margin: 0;
+}
+.content-wrap div p:nth-child(2) {
+  margin: 0 auto 0;
+  padding: 0;
+  width: 250px;
+}
+.content-wrap div button {
+  width: 130px;
+  background-color: #9dc3e6;
+  color: #000000;
+  font-weight: bold;
+  border: solid 1px #000000;
+}
+.content-wrap div:nth-child(3) {
+  width: auto;
+  margin: 20px 0 0 50px;
+}
+.content-wrap div:nth-child(3) img {
+  float: left;
+  margin: 0 20px 0 0;
+  border: solid 1px #000000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.optional {
+  background-color: #734803;
+  color: #ffffff;
+  font-size: .9em;
+  padding: 2px 5px 2px 5px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.register-content {
+  clear: both;
+  margin: 20px 0 20px 0;
+  /*div:nth-child(2) {
+        background-color: @soft;
+        .border-radius(8px);
+        float:right;
+        width: 475px;
+        height: 308px;
+        position: relative;
+        border: solid 1px @fontcolor;
+
+        button {
+            position: absolute;
+            top: 40%;
+            left: 85px;
+        }
+    }*/
+}
+.register-content div:nth-child(1) {
+  background-color: #fde7c3;
+  color: #000000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: solid 1px #000000;
+  padding: 20px;
+}
+.register-content div:nth-child(1) h4 {
+  display: block;
+  margin: 0;
+}
+.register-content p a {
+  color: #000000;
+  text-decoration: underline;
+}
+.checkbox-contain {
+  clear: both;
+}
+.checkbox-contain input[type=checkbox] {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  cursor: pointer;
+}
+.checkbox-contain .forcheckbox {
+  cursor: pointer;
+}
+fieldset,
+fieldset.login {
+  border: none;
+  padding: 15px;
+}
+fieldset legend,
+fieldset.login legend {
+  display: none;
+}
+fieldset .full-row,
+fieldset.login .full-row {
+  clear: both;
+}
+fieldset .full-row div,
+fieldset.login .full-row div {
+  float: left;
+  margin-right: 40px;
+}
+fieldset div,
+fieldset.login div {
+  margin-bottom: 10px;
+}
+fieldset div label,
+fieldset.login div label {
+  display: block;
+}
+fieldset div input,
+fieldset.login div input {
+  width: 400px;
+  font-size: 1.5em;
+  border: solid 1px #000000;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
+  padding: 5px;
+}
+fieldset div textarea,
+fieldset.login div textarea {
+  border: solid 1px #000000;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+fieldset div select,
+fieldset.login div select {
+  width: 412px;
+  cursor: pointer;
+  height: 40px;
+  padding: 5px;
+  border: solid 1px #000000;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+fieldset div button,
+fieldset.login div button {
+  width: 150px;
+  height: 30px;
+}
+.error {
+  border: solid 1px #ff0000;
+  background-color: #fee2e2;
+}
+.high-profile {
+  text-align: center;
+  background-color: #ffa819;
+  border: solid 1px #000000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  height: 50px;
+  padding-top: 15px;
+}
+.divider {
+  border-bottom: solid 1px #000000;
+  clear: both;
+}
+.marketing-images {
+  clear: both;
+  height: 161px;
+}
+.marketing-images div {
+  display: inline;
+}
+.marketing-images div img {
+  width: 292px;
+  height: 161px;
+  border: solid 1px #000000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.marketing-images div:nth-child(1) img {
+  margin-right: 42px;
+  float: left;
+}
+.marketing-images div:nth-child(2) img {
+  margin-left: 42px;
+  float: right;
+}
+.marketing-images div:nth-child(2) img:nth-child(2) {
+  margin-left: 30px;
+}
+.attention {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 3px;
+  border: solid 1px #ffffff;
+  text-align: center;
+}
+.required {
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #ff0000;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px #000000;
+  padding: 3px;
+  font-weight: normal;
+  font-style: italic;
+}
+.success {
+  background-color: #059515;
+  color: #ffffff;
+  padding: 4px;
+  border: solid 1px #ffffff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width: 900px;
+  text-align: center;
+}
+.progress {
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color: #059515;
+  color: #ffffff;
+  position: fixed;
+  top: -5px;
+  left: 45%;
+  border-left: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+  border-bottom: solid 1px #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  z-index: 10;
+}
+a {
+  color: #005db2;
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px #734803;
+  font-size: 1em;
+  outline: none;
+}
+button .emphasis {
+  color: #ffffff;
+  background-color: #005db2;
+  width: 120px;
+  padding: 5px;
+  font-weight: bold;
+}
+.wrapper div {
+  float: left;
+  width: 600px;
+}
+.wrapper div img {
+  border: solid 1px #000000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.extreme {
+  font-size: 1.5px;
+  color: #ffffff;
+  padding: 10px 20px;
+  background: -moz-linear-gradient(top, #42ff42 0%, #146600);
+  background: -webkit-gradient(linear, left top, left bottom, from(#42ff42), to(#146600));
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #134201;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8), inset 0px 0px 2px #ffffff;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8), inset 0px 0px 2px #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8), inset 0px 0px 2px #ffffff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4), 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
+.attention-button {
+  font-size: 18px;
+  color: #ffffff;
+  padding: 9px 20px;
+  background: -moz-linear-gradient(top, #059516 0%, #009c10 50%, #009924 50%, #046e10);
+  background: -webkit-gradient(linear, left top, left bottom, from(#059516), color-stop(0.5, #009c10), color-stop(0.5, #009924), to(#046e10));
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.6);
+  text-shadow: 1px 1px 3px #000000, 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index: 10000;
+  position: absolute;
+  width: 50%;
+  /* Default */
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 4px 4px 80px #000000;
+}
+.ng-modal-dialog-content {
+  padding: 10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+}

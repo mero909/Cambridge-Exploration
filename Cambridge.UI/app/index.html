@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cambridge Exploration, Inc. - Energy, Commodities and Reality</title>
+        <link rel="stylesheet" href="css/normalize.css"/>
+        <link rel="stylesheet" href="css/site.css"/>
+        <link rel="stylesheet" href="css/media-queries.css"/>
+    </head>
+    <body>
+        <div class="progress" ng-show="IsLoading" ng-cloak>{{LoadingMessage}}</div>
+
+        <header>
+            <h1 title="Cambridge Exploration, Inc. - Energy, Commodities and Reality">
+                <a href="/">Cambridge Exploration, Inc.</a>
+            </h1>
+            <nav ng-controller="AuthController" ng-init="getFullName()">
+                <div class="wrap">
+                    <div ng-show="!IsLoggedIn" class="inner-nav">
+                        <a href="/">Home</a>
+                        <span>|</span>
+                        <a href="/Contact">Contact Us</a>
+                        <span>|</span>
+                        <button onclick="location.href = '/Register'" type="button">Register</button>
+                        <span>|</span>
+                        <a href="/Auth">Login</a>
+                    </div>
+                    <div ng-show="IsLoggedIn" class="inner-nav">
+                        <a href="/">Home</a>
+                        <span>|</span>
+                        <a href="/Contact">Contact Us</a>
+                        <span>|</span>
+                        <a href="/Logout">Logout</a>
+                        <span>|</span>
+                        Welcome, {{FullName}}.
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div ng-view></div>
+
+        <footer>
+            <p>
+                &copy; 1978 - @DateTime.Now.Year <a href="/" class="exception">Cambridge Exploration, Inc.</a>
+            </p>
+            <p>
+                <a href="/">Home</a>
+                <span>|</span>
+                <a href="/Contact">Contact Us</a>
+                <span>|</span>
+                <a href="/Auth">Login</a>
+                <span>|</span>
+                <a href="/Register">Register Now!</a>
+            </p>
+            <p>
+                We recommend using <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Google Chrome</a> browser for the best experience.
+            </p>
+        </footer>
+
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+        -->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-route.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+
+        <!--<script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-48426545-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>-->
+    </body>
+</html>

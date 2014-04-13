@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="center" ng-controller="PasswordResetController">
+    <h1>Reset Password</h1>
+    
+    <div ng-show="!IsReset">
+        <form method="POST" ng-submit="ResetPassword()">
+            <fieldset>
+                <legend>Reset Password</legend>
+                <div>
+                    <input type="password" id="p1" ng-model="NewPassword" placeholder="Enter a Password" required tabindex="1" />
+                </div>
+                <div>
+                    <input type="password" id="p2" ng-model="ConfirmPassword" placeholder="Retype your Password" required tabindex="2"
+                           oninput="ValidatePass(document.getElementById('p1'), this);"
+                           onfocus="ValidatePass(document.getElementById('p1'), this);" />
+                </div>
+                <div>
+                    <button type="submit" tabindex="3">Change Password</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+    <div ng-show="IsError" class="attention">
+        {{ErrorMessage}}
+    </div>
+    
+    <div ng-show="IsReset">
+        <p>
+            Your Password has been reset successfully.
+        </p>
+        <p>
+            <a href="@Url.Action("Index", "Home")">Return to Login</a>
+        </p>
+    </div>
+
+</section>

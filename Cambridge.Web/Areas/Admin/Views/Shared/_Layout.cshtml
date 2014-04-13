@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cambridge Exploration, Inc. - Energy, Commodities and Reality</title>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-cookies.min.js"></script>
+        <link href="@Url.Content("~/Content/normalize.css")" rel="stylesheet"/>
+        <link href="@Url.Content("~/Content/media-queries.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/site.css")" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="progress" ng-show="IsLoading" ng-bind="LoadingMessage"></div>
+        
+        <header>
+            <h1 title="Cambridge Exploration, Inc. - Energy, Commodities and Reality">
+                <a href="@Url.Action("Index", "Home")">Cambridge Exploration, Inc. - Administration</a>
+            </h1>
+            <nav ng-controller="AuthController" ng-init="getFullName()">
+                <div class="wrap">
+                    <div ng-show="!IsLoggedIn" class="inner-nav">
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                        <span>|</span>
+                        <a href="@Url.Action("Index", "Contact")">Contact Us</a>
+                        <span>|</span>
+                        <button onclick="location.href = '@Url.Action("Index", "Register")'" type="button">Register</button>
+                        <span>|</span>
+                        <a href="@Url.Action("Index", "Auth")">Login</a>
+                    </div>
+                    <div ng-show="IsLoggedIn" class="inner-nav">
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                        <span>|</span>
+                        <a href="@Url.Action("Index", "Contact")">Contact Us</a>
+                        <span>|</span>
+                        <a href="@Url.Action("Logout", "Dashboard")">Logout</a>
+                        <span>|</span>
+                        Welcome, {{FullName}}.
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        @RenderBody()
+
+        <footer>
+            <p>
+                &copy; 1978 - @DateTime.Now.Year <a href="@Url.Action("Index", "Home")" class="exception">Cambridge Exploration, Inc.</a>
+            </p>
+            <p>
+                <a href="@Url.Action("Index", "Home")">Home</a>
+                <span>|</span>
+                <a href="@Url.Action("Index", "Contact")">Contact Us</a>
+                <span>|</span>
+                <a href="@Url.Action("Login", "Auth")">Login</a>
+                <span>|</span>
+                <a href="@Url.Action("Index", "Register")">Register Now!</a>
+            </p>
+            <p>
+                We recommend using <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Google Chrome</a> browser for the best experience.
+            </p>
+        </footer>
+        
+        <script src="@Url.Content("~/Scripts/app.js")"></script>
+        <script src="@Url.Content("~/Scripts/directives.js")"></script>
+        <script src="@Url.Content("~/Scripts/controllers.js")"></script>
+        <script src="@Url.Content("~/Scripts/services.js")"></script>
+
+        @RenderSection("scripts", false)
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-48426545-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

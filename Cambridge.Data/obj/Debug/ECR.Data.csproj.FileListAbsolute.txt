@@ -1,0 +1,10 @@
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\ECR.Data.dll.config
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\ECR.Data.dll
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\ECR.Data.pdb
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\EntityFramework.dll
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\EntityFramework.SqlServer.dll
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\EntityFramework.xml
+G:\Projects\ECR\ECR\ECR.Data\bin\Debug\EntityFramework.SqlServer.xml
+G:\Projects\ECR\ECR\ECR.Data\obj\Debug\ECR.Data.csprojResolveAssemblyReference.cache
+G:\Projects\ECR\ECR\ECR.Data\obj\Debug\ECR.Data.dll
+G:\Projects\ECR\ECR\ECR.Data\obj\Debug\ECR.Data.pdb
