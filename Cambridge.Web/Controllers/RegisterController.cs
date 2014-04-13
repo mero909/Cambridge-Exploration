@@ -218,6 +218,11 @@ namespace Cambridge.Web.Controllers
                     SetSecurityToPdf(viewModel, fileName);
                     sp.AppendLine("<span style=\"color: green\">PDF Regenerated successfully.</span><br />");
 
+                    _context.Database.ExecuteSqlCommand(
+                        "dbo.ContactFile_Save @CustomFileName, @ContactID",
+                        new SqlParameter("CustomFileName", fileName),
+                        new SqlParameter("ContactID", user.ID));
+
                     // send client email
                     using (var msg = new MailMessage())
                     {
