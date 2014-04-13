@@ -73,7 +73,7 @@ namespace Cambridge.Web.Controllers
                     ", @InvestorType_3, @InvestorType_4, @CustomFileName",
                     new SqlParameter("Name", model.Name),
                     new SqlParameter("Email", model.Email),
-                    new SqlParameter("Passcode", model.Passcode),
+                    new SqlParameter("Passcode", ConfigurationManager.AppSettings["MasterPasscode"]),
                     new SqlParameter("Phone", model.Phone),
                     new SqlParameter("Address", model.Address),
                     new SqlParameter("Address2", model.Address2 ?? String.Empty),
@@ -93,6 +93,7 @@ namespace Cambridge.Web.Controllers
                 // Create the new PDF and set Permissions.
                 SetSecurityToPdf(model, customFileName);
 
+                // send business email
                 using (var msg = new MailMessage())
                 {
                     msg.To.Add(new MailAddress("dennisandchristie@gmail.com"));
@@ -100,6 +101,21 @@ namespace Cambridge.Web.Controllers
                     msg.From = new MailAddress("noreply@cambridgeexploration.com");
                     msg.Subject = "CambridgeExploration.com - New Registrant";
                     msg.Body = BuildMessage(model);
+                    msg.IsBodyHtml = true;
+
+                    using (var smtp = new SmtpClient())
+                    {
+                        smtp.Send(msg);
+                    }
+                }
+
+                // send client email
+                using (var msg = new MailMessage())
+                {
+                    msg.To.Add(new MailAddress(model.Email.Trim()));
+                    msg.From = new MailAddress("noreply@cambridgeexploration.com");
+                    msg.Subject = "Cambridge Exploration - Thank you for your interest!";
+                    msg.Body = BuildContactMessage(model);
                     msg.IsBodyHtml = true;
 
                     using (var smtp = new SmtpClient())
@@ -182,6 +198,8 @@ namespace Cambridge.Web.Controllers
             if (String.IsNullOrEmpty(passcode) && passcode != "ce19782014")
                 return Content("<b>Please supply the passcode in the url.</b>");
 
+            
+
             var users = _context.Contacts.ToList();
 
             if (!users.Any()) return Content("No Users Present or there was a database problem.");
@@ -199,6 +217,21 @@ namespace Cambridge.Web.Controllers
                 {
                     SetSecurityToPdf(viewModel, fileName);
                     sp.AppendLine("<span style=\"color: green\">PDF Regenerated successfully.</span><br />");
+
+                    // send client email
+                    using (var msg = new MailMessage())
+                    {
+                        msg.To.Add(new MailAddress(viewModel.Email.Trim()));
+                        msg.From = new MailAddress("noreply@cambridgeexploration.com");
+                        msg.Subject = "Cambridge Exploration - A New Prospectus!";
+                        msg.Body = BuildRegenMessage();
+                        msg.IsBodyHtml = true;
+
+                        using (var smtp = new SmtpClient())
+                        {
+                            smtp.Send(msg);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -249,6 +282,32 @@ namespace Cambridge.Web.Controllers
             }
 
             sb.AppendFormat("Message: {0}<br />", model.Message);
+
+            return sb.ToString();
+        }
+
+        private String BuildContactMessage(RegisterViewModel model)
+        {
+            // Build Message Body
+            var sb = new StringBuilder();
+
+            sb.AppendLine("<h1>Thank you!</h1>");
+            sb.AppendLine("Thank you, " + model.Name + "<br />");
+            sb.AppendLine("Your passcode to unlock your prospectus is: " +
+                          ConfigurationManager.AppSettings["MasterPasscode"] + "<br />");
+
+            return sb.ToString();
+        }
+
+        private String BuildRegenMessage()
+        {
+            // Build Message Body
+            var sb = new StringBuilder();
+
+            sb.AppendLine("<h1>A New Prospectus!</h1>");
+            sb.AppendLine("A new prospectus is available on Cambridge Exploration's web site!<br />");
+            sb.AppendLine("Your passcode to unlock your prospectus is: <b>" +
+                          ConfigurationManager.AppSettings["MasterPasscode"] + "</b><br />");
 
             return sb.ToString();
         }
