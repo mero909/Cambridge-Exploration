@@ -131,7 +131,7 @@ namespace Cambridge.Web.Controllers
         /// <returns></returns>
         private String CustomFileName(String email)
         {
-            return String.Concat(email.Replace("@", "-at-").Replace(" ", "").Replace(".", "-dot-").Trim(), "-cambridge-prespectise.pdf");
+            return String.Concat(email.Replace("@", "-at-").Replace(" ", "").Replace(".", "-dot-").Trim(), "-cambridge-prospectise.pdf");
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Cambridge.Web.Controllers
 
             if (!checkFile.Exists)
             {
-                var file = new FileInfo(Server.MapPath("~/Content/Original_Prespectise.pdf"));
+                var file = new FileInfo(Server.MapPath("~/Content/Original_Prospectise.pdf"));
                 file.CopyTo(newFile);
             }
 
@@ -177,22 +177,38 @@ namespace Cambridge.Web.Controllers
             document.Save(newFile);
         }
 
-        //public ActionResult RegeneratePdfs()
-        //{
-        //    var users = _context.Contacts.ToList();
+        public ActionResult RegeneratePdfs(string passcode)
+        {
+            if (String.IsNullOrEmpty(passcode) && passcode != "ce19782014")
+                return Content("<b>Please supply the passcode in the url.</b>");
 
-        //    if (!users.Any()) return Content("No Users Present or there was a database problem.");
+            var users = _context.Contacts.ToList();
 
-        //    foreach (var user in users)
-        //    {
-        //        var viewModel = new RegisterViewModel { Email = user.Email, Passcode = @"" };
+            if (!users.Any()) return Content("No Users Present or there was a database problem.");
 
+            var sp = new StringBuilder();
 
+            foreach (var user in users)
+            {
+                var viewModel = new RegisterViewModel { Email = user.Email, Passcode = ConfigurationManager.AppSettings["MasterPasscode"] };
+                var fileName = CustomFileName(user.Email);
 
-        //    }
+                sp.AppendLine("<span style=\"color: #000;\">Contact: " + user.Name + " - [" + user.Email + "]</span>");
 
+                try
+                {
+                    SetSecurityToPdf(viewModel, fileName);
+                    sp.AppendLine("<span style=\"color: green\">PDF Regenerated successfully.</span><br />");
+                }
+                catch (Exception ex)
+                {
+                    sp.AppendLine("<span style=\"color: #f00; font-size: 14px;\">PDF Regenerated Failed.</span><br />Reason: " + ex.Message +
+                                  "<br />StackTrace: " + ex.StackTrace + "<br />");
+                }
+            }
 
-        //}
+            return Content(sp.ToString());
+        }
 
         /// <summary>
         /// Builds the message.

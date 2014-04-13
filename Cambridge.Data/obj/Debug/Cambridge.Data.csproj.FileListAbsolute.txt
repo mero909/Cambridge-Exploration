@@ -16,4 +16,3 @@ G:\Projects\Cambridge\Cambridge.Data\bin\Debug\EntityFramework.xml
 G:\Projects\Cambridge\Cambridge.Data\bin\Debug\EntityFramework.SqlServer.xml
 G:\Projects\Cambridge\Cambridge.Data\obj\Debug\Cambridge.Data.dll
 G:\Projects\Cambridge\Cambridge.Data\obj\Debug\Cambridge.Data.pdb
-G:\Projects\Cambridge\Cambridge.Data\obj\Debug\Cambridge.Data.csprojResolveAssemblyReference.cache
