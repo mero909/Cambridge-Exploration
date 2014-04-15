@@ -80,7 +80,7 @@ app.controller("AuthController", function ($scope, $rootScope, $cookieStore, cam
             cambridgeServices.authenticate($scope.Auth)
                 .then(function(data)
                 {
-                    if (data === "false") {
+                    if (data === "0") {
                         $rootScope.IsLoading = false;
                         $rootScope.ErrorMessage = "Authentication failed.";
                         $rootScope.IsError = true;
