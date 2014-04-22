@@ -73,7 +73,7 @@ namespace Cambridge.Web.Controllers
                     ", @InvestorType_3, @InvestorType_4, @CustomFileName",
                     new SqlParameter("Name", model.Name),
                     new SqlParameter("Email", model.Email),
-                    new SqlParameter("Passcode", ConfigurationManager.AppSettings["MasterPasscode"]),
+                    new SqlParameter("Passcode", model.Passcode),
                     new SqlParameter("Phone", model.Phone),
                     new SqlParameter("Address", model.Address),
                     new SqlParameter("Address2", model.Address2 ?? String.Empty),
@@ -173,7 +173,7 @@ namespace Cambridge.Web.Controllers
 
             // Setting one of the passwords automatically sets the security level to 
             // PdfDocumentSecurityLevel.Encrypted128Bit.
-            securitySettings.UserPassword = model.Passcode;
+            securitySettings.UserPassword = ConfigurationManager.AppSettings["MasterPasscode"];
             securitySettings.OwnerPassword = ConfigurationManager.AppSettings["MasterPasscode"];
 
             // Don't use 40 bit encryption unless needed for compatibility reasons

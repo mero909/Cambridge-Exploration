@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Mvc;
 using Cambridge.Data.Models;
+using Cambridge.Web.Models;
 
 namespace Cambridge.Web.Controllers
 {
@@ -20,21 +21,18 @@ namespace Cambridge.Web.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Logins the specified email.
-        /// </summary>
-        /// <param name="email">The email.</param>
-        /// <param name="password">The password.</param>
-        /// <returns></returns>
-        public ActionResult Login(string email, string password)
+        
+        public ActionResult Login(LoginViewModel model)
         {
-            if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password)) return RedirectToAction("Login");
+            if (String.IsNullOrEmpty(model.Email) || String.IsNullOrEmpty(model.Passcode)) return RedirectToAction("Login");
 
             var result = _context.Database.SqlQuery<Contact>("dbo.Contact_Authenticate @Email, @Password",
-                new SqlParameter("Email", email),
-                new SqlParameter("Password", password)).FirstOrDefault();
+                new SqlParameter("Email", model.Email),
+                new SqlParameter("Password", model.Passcode)).FirstOrDefault();
 
-            return Json(result == null ? 0 : result.ID, JsonRequestBehavior.AllowGet);
+            if (result == null) return RedirectToAction("Index", "Home");
+
+            return RedirectToAction("Index", "Dashboard", new { contactId = result.ID });
         }
 
         public string GetFullName(int id)

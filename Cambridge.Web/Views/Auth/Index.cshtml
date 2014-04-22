@@ -1,4 +1,5 @@
-﻿
+﻿@model Cambridge.Web.Models.LoginViewModel
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -13,17 +14,35 @@
             </p>
 
             <div id="login" ng-show="!IsLoading">
-                <form name="loginform" method="POST" ng-submit="Authenticate()" novalidate>
+                <form name="loginform" method="POST" action="@Url.Action("Login", "Auth")" novalidate>
                     <fieldset class="login">
                         <legend>Login</legend>
                         <div>
                             <label for="Email">Email:</label>
-                            <input id="Email" name="Email" type="email" ng-model="Auth.Email" tabindex="1" maxlength="50" required autofocus="autofocus" />
+                            @Html.TextBoxFor(x => x.Email, new
+                            {
+                                @id = "Email",
+                                @name = "Email",
+                                ng_model = "Auth.Email",
+                                tabindex = "1",
+                                maxlength = "50",
+                                required = "",
+                                autofocus = "autofocus"
+                            })
                             <span class="required" ng-show="loginform.Email.$invalid && !loginform.Email.$pristine" ng-cloak>Enter a valid email.</span>
                         </div>
                         <div>
                             <label for="Passcode">Password:</label>
-                            <input id="Passcode" name="Passcode" type="password" ng-model="Auth.Password" maxlength="50" tabindex="2" required />
+                            @Html.PasswordFor(x => x.Passcode, new
+                            {
+                                @id = "Passcode",
+                                @name = "Passcode",
+                                ng_model = "Auth.Password",
+                                tabindex = "2",
+                                maxlength = "50",
+                                required = "",
+                                autofocus = "autofocus"
+                            })
                             <span class="required" ng-cloak ng-show="loginform.Passcode.$invalid && !loginform.Passcode.$pristine">Enter your password.</span>
                         </div>
                         <div>

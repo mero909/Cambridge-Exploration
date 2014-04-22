@@ -86,7 +86,7 @@ app.controller("AuthController", function ($scope, $rootScope, $cookieStore, cam
                         $rootScope.IsError = true;
                     } else {
                         $cookieStore.put("id", data);
-                        $rootScope.IsLoading = false;
+                        $rootScope.IsLoading = true;
                         $rootScope.IsLoggedIn = true;
                         $rootScope.LoadingMessage = "Logging In...";
 

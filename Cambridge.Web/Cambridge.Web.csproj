@@ -152,6 +152,7 @@
     </Compile>
     <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
