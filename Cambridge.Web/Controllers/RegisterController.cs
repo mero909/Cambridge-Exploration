@@ -169,25 +169,25 @@ namespace Cambridge.Web.Controllers
             // Open an existing document. Providing an unrequired password is ignored.
             var document = PdfReader.Open(newFile);
 
-            var securitySettings = document.SecuritySettings;
+            //var securitySettings = document.SecuritySettings;
 
             // Setting one of the passwords automatically sets the security level to 
             // PdfDocumentSecurityLevel.Encrypted128Bit.
-            securitySettings.UserPassword = model.Passcode;
-            securitySettings.OwnerPassword = ConfigurationManager.AppSettings["MasterPasscode"];
+            //securitySettings.UserPassword = model.Passcode;
+            //securitySettings.OwnerPassword = ConfigurationManager.AppSettings["MasterPasscode"];
 
             // Don't use 40 bit encryption unless needed for compatibility reasons
             //securitySettings.DocumentSecurityLevel = PdfDocumentSecurityLevel.Encrypted40Bit;
 
             // Restrict some rights.
-            securitySettings.PermitAccessibilityExtractContent = false;
-            securitySettings.PermitAnnotations = false;
-            securitySettings.PermitAssembleDocument = false;
-            securitySettings.PermitExtractContent = false;
-            securitySettings.PermitFormsFill = true;
-            securitySettings.PermitFullQualityPrint = false;
-            securitySettings.PermitModifyDocument = true;
-            securitySettings.PermitPrint = false;
+            //securitySettings.PermitAccessibilityExtractContent = false;
+            //securitySettings.PermitAnnotations = false;
+            //securitySettings.PermitAssembleDocument = false;
+            //securitySettings.PermitExtractContent = false;
+            //securitySettings.PermitFormsFill = true;
+            //securitySettings.PermitFullQualityPrint = false;
+            //securitySettings.PermitModifyDocument = true;
+            //securitySettings.PermitPrint = false;
 
             // Save the document...
             document.Save(newFile);

@@ -1,0 +1,5 @@
+G:\Projects\Cambridge\Cambridge.Specs\bin\Debug\Cambridge.Specs.dll
+G:\Projects\Cambridge\Cambridge.Specs\bin\Debug\Cambridge.Specs.pdb
+G:\Projects\Cambridge\Cambridge.Specs\obj\Debug\Cambridge.Specs.csprojResolveAssemblyReference.cache
+G:\Projects\Cambridge\Cambridge.Specs\obj\Debug\Cambridge.Specs.dll
+G:\Projects\Cambridge\Cambridge.Specs\obj\Debug\Cambridge.Specs.pdb
