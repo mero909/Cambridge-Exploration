@@ -173,7 +173,7 @@ namespace Cambridge.Web.Controllers
 
             // Setting one of the passwords automatically sets the security level to 
             // PdfDocumentSecurityLevel.Encrypted128Bit.
-            securitySettings.UserPassword = ConfigurationManager.AppSettings["MasterPasscode"];
+            securitySettings.UserPassword = model.Passcode;
             securitySettings.OwnerPassword = ConfigurationManager.AppSettings["MasterPasscode"];
 
             // Don't use 40 bit encryption unless needed for compatibility reasons
@@ -208,7 +208,7 @@ namespace Cambridge.Web.Controllers
 
             foreach (var user in users)
             {
-                var viewModel = new RegisterViewModel { Email = user.Email, Passcode = ConfigurationManager.AppSettings["MasterPasscode"] };
+                var viewModel = new RegisterViewModel { Email = user.Email, Passcode = "" };
                 var fileName = CustomFileName(user.Email);
 
                 sp.AppendLine("<span style=\"color: #000;\">Contact: " + user.Name + " - [" + user.Email + "]</span>");

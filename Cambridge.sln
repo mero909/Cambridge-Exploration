@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cambridge.Web", "Cambridge.Web\Cambridge.Web.csproj", "{A30F2FF5-6DD6-41E4-A2CA-A4060DBCEF33}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{01ECE4
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cambridge.Specs", "Cambridge.Specs\Cambridge.Specs.csproj", "{D4502687-E6DF-4B06-AC4A-50788187EA5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{221D7FE7-9EC3-4656-9B25-D2270F4555D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{221D7FE7-9EC3-4656-9B25-D2270F4555D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{221D7FE7-9EC3-4656-9B25-D2270F4555D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4502687-E6DF-4B06-AC4A-50788187EA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4502687-E6DF-4B06-AC4A-50788187EA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4502687-E6DF-4B06-AC4A-50788187EA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4502687-E6DF-4B06-AC4A-50788187EA5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
